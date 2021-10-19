@@ -1,0 +1,58 @@
+.eventParent {
+  display: grid;
+  padding: 2rem 1rem;
+  grid-auto-flow: row;
+}
+
+.eventContainer {
+  padding: 2rem;
+}
+
+.eventTitle {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.eventFeaturedImage {
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.firstStats{
+    padding: 1rem;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 2rem;
+    grid-template-columns: 20% auto;
+}
+
+.eventDesc{
+    display: grid;
+    padding-top: 3rem;
+}
+.eventDescTitle{
+    font-weight: bold;
+}
+
+.eventDescContent{
+    line-height: 1.3;
+    font-weight: normal;
+    padding: 1rem 1rem 1rem 0rem;
+}
+
+.eventActivity{
+    font-weight: bold;
+    line-height: 1rem;
+}
+
+.activity{
+    font-weight: normal;
+    text-align: left;
+}
+
+.firstStats .firstUpper{
+    padding-top: 3rem;
+}
