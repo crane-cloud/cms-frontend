@@ -14,6 +14,7 @@ function ACN() {
         }}
       >
         <iframe
+          title="iframe title"
           src="https://giphy.com/embed/EIiJp9cQ3GeEU"
           width="100%"
           height="100%"

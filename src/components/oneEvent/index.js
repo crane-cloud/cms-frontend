@@ -29,7 +29,6 @@ class Event extends Component {
   }
 
   render() {
-    
     const { data } = this.state;
     return (
       <div className="componentBackdrop">
@@ -82,7 +81,16 @@ class Event extends Component {
                     position: "relative",
                   }}
                 >
-                  <iframe src={`${data.acf.links}`} width="100%" height="100%" style={{position:"absolute"}} frameBorder="0" class="giphy-embed" allowFullScreen />
+                  <iframe
+                    src={`${data.acf.links}`}
+                    title="iframe title"
+                    width="100%"
+                    height="100%"
+                    style={{ position: "absolute" }}
+                    frameBorder="0"
+                    class="giphy-embed"
+                    allowFullScreen
+                  />
                   {/* <iframe
                     src="https://www.youtube.com/embed/E7wJTI-1dvQ"
                     frameborder="0"
