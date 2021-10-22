@@ -153,6 +153,13 @@
 .blog-card:hover .details {
   left: 0%;
 }
+
+.loader{
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media (min-width: 640px) {
   .blog-card {
     flex-direction: row;
