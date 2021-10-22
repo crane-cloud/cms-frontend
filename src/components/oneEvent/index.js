@@ -9,34 +9,41 @@ import Spinner from "../Spinner";
 const Event = () => {
   const [event, setEvent] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const { id } = useParams();
+  const [error, setError] = useState("");
+  const { slug } = useParams();
 
   useEffect(() => {
     const fetchEvent = async () => {
       setIsLoading(true);
       try {
         const response = await fetch(
-          `${API_BASE_URL}/wp-json/wp/v2/events/${id}/`
+          `${API_BASE_URL}/wp-json/wp/v2/events/${slug}`
         );
         const responseData = await response.json();
         setEvent(responseData);
         setIsLoading(false);
       } catch (err) {
-        setError("No events yet.");
+        const { message } = err;
+        console.log(err);
+        setError(message);
         setIsLoading(false);
       }
     };
     fetchEvent();
-  }, [id]);
-
+  }, [setEvent]);
+  console.log(error);
   return (
     <div className="componentBackdrop">
       <Header />
       <div className="InformationBar">
         <div className="InfoHeader">Event</div>
       </div>
-      {event.length !== 0 ? (
+      {/* {error && (
+        <div className="errorDiv">
+          <div>{error}</div>
+        </div>
+      )} */}
+      {Object.keys(event).length > 3 ? (
         <div className="eventContainer">
           <div className="eventTitle">{event.title.rendered}</div>
           <div className="eventParent">
@@ -107,8 +114,8 @@ const Event = () => {
           </div>
         </div>
       ) : (
-        <div className="loader">
-          {isLoading ? <Spinner /> : <div>{error}</div>}
+        <div className="errorDiv">
+          <div>{error}</div>
         </div>
       )}
     </div>
