@@ -5,6 +5,7 @@ import Header from "../Header";
 import "./event.css";
 import { API_BASE_URL } from "../../config";
 import Spinner from "../Spinner";
+import axios from "axios";
 
 const Event = () => {
   const [event, setEvent] = useState([]);
@@ -13,36 +14,26 @@ const Event = () => {
   const { slug } = useParams();
 
   useEffect(() => {
-    const fetchEvent = async () => {
-      setIsLoading(true);
-      try {
-        const response = await fetch(
-          `${API_BASE_URL}/wp-json/wp/v2/events/${slug}`
-        );
-        const responseData = await response.json();
-        setEvent(responseData);
+    axios
+      .get(`${API_BASE_URL}/wp-json/wp/v2/events/${slug}`)
+      .then((res) => {
+        setEvent(res.data);
         setIsLoading(false);
-      } catch (err) {
-        const { message } = err;
-        console.log(err);
-        setError(message);
+        setError("");
+      })
+      .catch((err) => {
+        setError("Event ID not found!");
         setIsLoading(false);
-      }
-    };
-    fetchEvent();
-  }, [setEvent]);
-  console.log(error);
+        setEvent([]);
+      });
+  }, [slug]);
   return (
     <div className="componentBackdrop">
       <Header />
       <div className="InformationBar">
         <div className="InfoHeader">Event</div>
       </div>
-      {/* {error && (
-        <div className="errorDiv">
-          <div>{error}</div>
-        </div>
-      )} */}
+      {isLoading ? <Spinner size="big"/> : null}
       {Object.keys(event).length > 3 ? (
         <div className="eventContainer">
           <div className="eventTitle">{event.title.rendered}</div>
@@ -86,6 +77,7 @@ const Event = () => {
                   height: "50vh",
                   paddingBottom: "10%",
                   position: "relative",
+                  fontSize: "1.5rem",
                 }}
               >
                 <iframe
