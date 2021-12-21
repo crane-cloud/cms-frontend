@@ -33,20 +33,8 @@ function Articles() {
         setArticles({});
       });
   }, []);
-  console.log(articles);
   return (
     <div className="componentBackdrop">
-      <section>
-        <h2>The example section.</h2>
-        <article>
-          <h5>
-            <span>Article Image</span>
-          </h5>
-          <img src="../section.png" alt="article_photo" />
-          <p>This is our firtst paragraph</p>
-          <p>This is our second paragraph</p>
-        </article>
-      </section>
       <Header />
       <div className="InformationBar">
         <div className="InfoHeader">Articles</div>
@@ -96,7 +84,7 @@ function Articles() {
                       ></div>
                     </p>
                     <p class="read-more">
-                      <a href={article.link} target="__blankR" key={article.id}>
+                      <a href={article.link} target="__blank" key={article.id}>
                         Read More
                       </a>
                     </p>

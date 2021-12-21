@@ -79,18 +79,6 @@ const LandingFooter = () => (
               <div className="TextDivSpacing FooterLogoName">Resources</div>
               <ul className="FooterList">
                 <li className="TextDivSpacing">
-                  <Link to="/events">Events</Link>
-                </li>
-                <li className="TextDivSpacing">
-                  <a
-                    href="https://docs.cranecloud.io/quickstart/quickstart/"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    Quick Start Guide
-                  </a>
-                </li>
-                <li className="TextDivSpacing">
                   <a
                     href={`${DOCS_URL}`}
                     rel="noopener noreferrer"
@@ -98,6 +86,12 @@ const LandingFooter = () => (
                   >
                     Docs
                   </a>
+                </li>
+                <li className="TextDivSpacing">
+                  <Link to="/articles">Articles</Link>
+                </li>
+                <li className="TextDivSpacing">
+                  <Link to="/events">Events</Link>
                 </li>
               </ul>
             </div>
@@ -107,7 +101,7 @@ const LandingFooter = () => (
                 <li className="TextDivSpacing">
                   <Link to="/cloud-native-africa">Cloud Native Africa</Link>
                 </li>
-                <li className="TextDivSpacing">Contribute</li>
+                <li className="TextDivSpacing"><Link to="/faq">FAQs</Link></li>
                 <li className="TextDivSpacing">
                   <a
                     href="https://medium.com/cranecloud"

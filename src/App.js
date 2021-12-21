@@ -10,6 +10,7 @@ import PageNotFound from './components/PageNotFound';
 import Event from './components/oneEvent';
 import './App.css';
 import Articles from './components/Articles';
+import Faq from './components/Faq';
 
 class App extends Component {
   render(){
@@ -24,6 +25,7 @@ class App extends Component {
         <Route exact path="/articles" component={Articles} />
         <Route exact path="/:slug/event" component={Event} />
         <Route exact path="/cloud-native-africa" component={ACN}/>
+        <Route exact path="/faq" component={Faq}/>
         <Route path="*" component={PageNotFound} />
       </Switch>
     </Router>
