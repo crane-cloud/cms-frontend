@@ -1,6 +1,6 @@
 import React from // { useState, useEffect, useRef }
 "react";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import NewLogo from "../NewLogo";
 import "./NewHeader.css";
 import { DOCS_URL, BLOG_URL, LOGIN_URL } from "../../config";
@@ -28,6 +28,7 @@ const NewHeader = () => {
           >
             Blog
           </a>
+          <Link className="HeaderLinkDocs" to="/pricing">Pricing</Link>
           <a
             href={`${LOGIN_URL}`}
             className="HeaderLinkDocs"
