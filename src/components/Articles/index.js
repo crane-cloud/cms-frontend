@@ -10,7 +10,7 @@ function Articles() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const convertHtml = myHtml => {
+  const convertHtml = (myHtml) => {
     return DOMPurify.sanitize(myHtml, {
       ALLOWED_TAGS: ["p"],
     });

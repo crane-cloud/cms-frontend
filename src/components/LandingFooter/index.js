@@ -64,14 +64,13 @@ const LandingFooter = () => (
                   <Link to="/team">Team</Link>
                 </li>
                 <li className="TextDivSpacing">
-                  <Link to="/terms-of-service" target="_blank">
-                    Terms of service
-                  </Link>
+                  <Link to="/terms-of-service">Terms of service</Link>
                 </li>
                 <li className="TextDivSpacing">
-                  <Link to="/privacy-policy" target="_blank">
-                    Privacy policy
-                  </Link>
+                  <Link to="/privacy-policy">Privacy policy</Link>
+                </li>
+                <li className="TextDivSpacing">
+                  <Link to="/pricing">Pricing</Link>
                 </li>
               </ul>
             </div>
@@ -101,7 +100,6 @@ const LandingFooter = () => (
                 <li className="TextDivSpacing">
                   <Link to="/cloud-native-africa">Cloud Native Africa</Link>
                 </li>
-                <li className="TextDivSpacing"><Link to="/faq">FAQs</Link></li>
                 <li className="TextDivSpacing">
                   <a
                     href="https://medium.com/cranecloud"
@@ -110,6 +108,9 @@ const LandingFooter = () => (
                   >
                     Blog
                   </a>
+                </li>
+                <li className="TextDivSpacing">
+                  <Link to="/faq">FAQs</Link>
                 </li>
               </ul>
             </div>

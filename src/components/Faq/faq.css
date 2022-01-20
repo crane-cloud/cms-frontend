@@ -24,6 +24,7 @@
   /*To move button in header to right*/
   position: absolute;
   right: 35px;
+  cursor: pointer;
 }
 
 .div-item-head {
@@ -33,4 +34,5 @@
   margin-bottom: 5px;
   padding: 10px 1rem;
   position: relative;
+  cursor: pointer;
 }

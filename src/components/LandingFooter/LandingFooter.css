@@ -4,9 +4,6 @@ footer.LandingFooter {
   background-color: #f1f1f1;
 }
 
-.FooterRow{
-  padding: 3rem;
-}
 .FooterParent {
   display: flex;
 }
