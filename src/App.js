@@ -12,6 +12,7 @@ import './App.css';
 import Articles from './components/Articles';
 import Faq from './components/Faq';
 import Pricing from './components/Pricing'
+import Contact from './components/ContactPage';
 
 class App extends Component {
   render(){
@@ -28,6 +29,7 @@ class App extends Component {
         <Route exact path="/cloud-native-africa" component={ACN}/>
         <Route exact path="/faqs" component={Faq}/>
         <Route exact path="/pricing" component={Pricing} />
+        <Route exact path="/contact" component={Contact} />
         <Route path="*" component={PageNotFound} />
       </Switch>
     </Router>
