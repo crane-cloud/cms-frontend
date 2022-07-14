@@ -42,30 +42,30 @@ const Event = () => {
               <div
                 class="eventFeaturedImage"
                 style={{
-                  backgroundImage: `url(${event.acf.cover_image.url})`,
+                  backgroundImage: `url(${event.acf?.cover_image.url})`,
                 }}
               ></div>
               <div className="firstStats firstUpper">
                 <div className="eventActivity">Starts:</div>
-                <div className="activity">{event.acf.start_date}</div>
+                <div className="activity">{event.acf?.start_date}</div>
               </div>
               <div className="firstStats">
                 <div className="eventActivity">Ends:</div>{" "}
-                <div className="activity">{event.acf.end_date}</div>
+                <div className="activity">{event.acf?.end_date}</div>
               </div>
               <div className="firstStats">
                 <div className="eventActivity">Location:</div>{" "}
-                <div className="activity">{event.acf.location}</div>
+                <div className="activity">{event.acf?.location}</div>
               </div>
               <div className="firstStats">
                 <div className="eventActivity">Category: </div>
-                <div className="activity">{event.acf.event_type}</div>
+                <div className="activity">{event.acf?.event_type}</div>
               </div>
             </div>
             <div className="eventDesc">
               <div className="eventDescTitle">Description</div>
               <div className="eventDescContent">
-                {event.acf.description} For more information contact
+                {event.acf?.description} For more information contact
                 dorothy@cranecloud.io
               </div>
             </div>
@@ -81,7 +81,7 @@ const Event = () => {
                 }}
               >
                 <iframe
-                  src={`${event.acf.links}`}
+                  src={`${event.acf?.links}`}
                   title="iframe title"
                   width="100%"
                   height="100%"
