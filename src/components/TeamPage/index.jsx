@@ -1,77 +1,73 @@
-import React from "react";
-import NewHeader from "../NewHeader";
+import React, { useState, useEffect } from "react";
+import Header from "../Header";
+import { API_BASE_URL } from "../../config";
+import Spinner from "../Spinner";
 import "./TeamPage.css";
 import MemberCard from "../MemberCard";
-import Engineer from "../../assets/images/Engineer.png";
-import Alex from "../../assets/images/Alex.png";
-import Aminah from "../../assets/images/Aminah.png";
-import Greatest from "../../assets/images/Greatest.png";
-import Allan from "../../assets/images/Allan.png";
-import Henry from "../../assets/images/Henry.png";
-import Dorothy from "../../assets/images/Dorothy.png";
-import Steve from "../../assets/images/Steve.png";
-import Paul from "../../assets/images/Paul.png";
-import Colin from "../../assets/images/Colin.png";
-import Mary from "../../assets/images/Mary.png";
-import Rajab from "../../assets/images/Rajab.png";
-import Dora from "../../assets/images/Dora.jpg";
-import Inno from "../../assets/images/Inno.jpg";
-import James from "../../assets/images/James.jpg";
 
-const members = [
-  {
-    id: 1,
-    name: "Engineer Bainomugisha",
-    title: "Project Lead",
-    icon: Engineer,
-  },
-  { id: 2, name: "Alex Mwotil", title: "Project Manager", icon: Alex },
-  { id: 3, name: "Aminah Zawedde", title: "Senior Researcher", icon: Aminah },
-  {
-    id: 4,
-    name: "Dora Bampangana",
-    title: "Project Administrator",
-    icon: Dora,
-  },
-  {
-    id: 5,
-    name: "Dorothy Ankunda",
-    title: "Business Development Lead",
-    icon: Dorothy,
-  },
-  { id: 6, name: "Innocent Asiimwe", title: "DevOps Engineer", icon: Inno },
-  { id: 7, name: "Colin Wagaba", title: "DevOps Engineer", icon: Colin },
-  { id: 8, name: "Steve Araka", title: "DevOps Engineer", icon: Steve },
-  { id: 9, name: "Derrick Sekidde", title: "DevOps Engineer", icon: Greatest },
-  { id: 10, name: "Allan Mubangizi", title: "Student Developer", icon: Allan },
-  { id: 11, name: "Henry Mutegeki", title: "Student Developer", icon: Henry },
-  { id: 12, name: "James Ssekamatte", title: "Researcher", icon: James },
-  { id: 13, name: "Mary Magdalene Naggita", title: "Intern", icon: Mary },
-  { id: 14, name: "Paul Kamasu", title: "Intern", icon: Paul },
-  { id: 15, name: "Rajab Ssemakula", title: "Intern", icon: Rajab },
-];
+const TeamPage = () => {
+  const [members, setMembers] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-const TeamPage = () => (
-  <div className="TeamPageContainer">
-    <NewHeader />
-    <div className="TeamImagesRow">
-      {members.map((member) => (
-        <MemberCard
-          key={member.id}
-          name={member.name}
-          title={member.title}
-          icon={member.icon}
-        />
-      ))}
+  useEffect(() => {
+    const fetchMembers = async () => {
+      setIsLoading(true);
+      try {
+        // the dfault results is 10 results which I increased to 100 with ?per_page=100
+        // call all the entire objects can be slow so i optimised that by only fetching the required fields
+        const response = await fetch(
+          `${API_BASE_URL}/wp-json/wp/v2/members?per_page=100&_fields[]=id&_fields[]=date&_fields[]=acf`
+        );
+        const responseData = await response.json();
+        const sortedProjects = responseData.sort((a, b) =>
+          b.date < a.date ? 1 : -1
+        );
+        setMembers(sortedProjects);
+        setIsLoading(false);
+      } catch (err) {
+        setError("No Members yet.");
+        setIsLoading(false);
+      }
+    };
+    fetchMembers();
+  }, []);
+  return (
+    <div className="TeamPageContainer">
+      <Header />
+      <div className="TeamImagesRow">
+        {members.length !== 0 ? (
+          members.map((member) => (
+            <div key={member.id}>
+              <MemberCard
+                key={member.id}
+                name={member.acf.name}
+                title={member.acf.role}
+                image={member.acf.image}
+              />
+            </div>
+          ))
+        ) : (
+          <div>
+            <p>{error}</p>
+          </div>
+        )}
+        {isLoading ? (
+          <div className="loader">
+            <Spinner size="big" />
+          </div>
+        ) : null}
+      </div>
+      <div className="TeamPageFooter">
+        <footer className="TeamFooter">
+          <p className="TeamFooterCopyright">
+            Copyright {new Date().getFullYear()} Crane Cloud. All Rights
+            Reserved.
+          </p>
+        </footer>
+      </div>
     </div>
-    <div className="TeamPageFooter">
-      <footer className="TeamFooter">
-        <p className="TeamFooterCopyright">
-          Copyright {new Date().getFullYear()} Crane Cloud. All Rights Reserved.
-        </p>
-      </footer>
-    </div>
-  </div>
-);
+  );
+};
 
 export default TeamPage;
