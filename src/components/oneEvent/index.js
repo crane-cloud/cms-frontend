@@ -6,6 +6,7 @@ import "./event.css";
 import { API_BASE_URL } from "../../config";
 import Spinner from "../Spinner";
 import axios from "axios";
+import Carousel from "./Carousel";
 
 const Event = () => {
   const [event, setEvent] = useState([]);
@@ -33,35 +34,33 @@ const Event = () => {
       <div className="InformationBar">
         <div className="InfoHeader">Event</div>
       </div>
-      {isLoading ? <Spinner size="big"/> : null}
+      {isLoading ? <Spinner size="big" /> : null}
       {Object.keys(event).length > 3 ? (
         <div className="eventContainer">
           <div className="eventTitle">{event.title.rendered}</div>
           <div className="eventParent">
-            <div>
-              <div
-                class="eventFeaturedImage"
-                style={{
-                  backgroundImage: `url(${event.acf?.cover_image.url})`,
-                }}
-              ></div>
-              <div className="firstStats firstUpper">
-                <div className="eventActivity">Starts:</div>
-                <div className="activity">{event.acf?.start_date}</div>
-              </div>
-              <div className="firstStats">
-                <div className="eventActivity">Ends:</div>{" "}
-                <div className="activity">{event.acf?.end_date}</div>
-              </div>
-              <div className="firstStats">
-                <div className="eventActivity">Location:</div>{" "}
-                <div className="activity">{event.acf?.location}</div>
-              </div>
-              <div className="firstStats">
-                <div className="eventActivity">Category: </div>
-                <div className="activity">{event.acf?.event_type}</div>
-              </div>
+            <div
+              className="eventFeaturedImage"
+            >
+              <Carousel imgUrls={event.acf.images}/>
             </div>
+            <div className="firstStats firstUpper">
+              <div className="eventActivity">Starts:</div>
+              <div className="activity">{event.acf?.start_date}</div>
+            </div>
+            <div className="firstStats">
+              <div className="eventActivity">Ends:</div>{" "}
+              <div className="activity">{event.acf?.end_date}</div>
+            </div>
+            <div className="firstStats">
+              <div className="eventActivity">Location:</div>{" "}
+              <div className="activity">{event.acf?.location}</div>
+            </div>
+            <div className="firstStats">
+              <div className="eventActivity">Category: </div>
+              <div className="activity">{event.acf?.event_type}</div>
+            </div>
+
             <div className="eventDesc">
               <div className="eventDescTitle">Description</div>
               <div className="eventDescContent">
@@ -70,34 +69,8 @@ const Event = () => {
               </div>
             </div>
             <div className="videoContent">
-              <div className="eventDescTitle">Video Content</div>
-              <div
-                style={{
-                  width: "100%",
-                  height: "50vh",
-                  paddingBottom: "10%",
-                  position: "relative",
-                  fontSize: "1.5rem",
-                }}
-              >
-                <iframe
-                  src={`${event.acf?.links}`}
-                  title="iframe title"
-                  width="100%"
-                  height="100%"
-                  style={{ position: "absolute" }}
-                  frameBorder="0"
-                  class="giphy-embed"
-                  allowFullScreen
-                />
-                {/* <iframe
-                    src="https://www.youtube.com/embed/E7wJTI-1dvQ"
-                    frameborder="0"
-                    allow="encrypted-media"
-                    allowfullscreen
-                    title="video"
-                  /> */}
-              </div>
+              <div className="eventDescTitle">Video Link</div>
+              <div>{event.acf?.link?event.acf?.link:'None'}</div>
             </div>
           </div>
           <div>
