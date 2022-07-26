@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import ReactDOM from "react-dom";
 import { useParams } from "react-router-dom";
+import LandingFooter from "../LandingFooter";
 import Header from "../Header";
 import "./event.css";
 import { API_BASE_URL } from "../../config";
@@ -83,7 +84,11 @@ const Event = () => {
           <div>{error}</div>
         </div>
       )}
+       <div className="LandingPageFooter">
+        <LandingFooter />
+      </div>
     </div>
+    
   );
 };
 
