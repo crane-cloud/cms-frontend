@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "../Header";
 import "./events.css";
+import LandingFooter from "../LandingFooter";
 import { API_BASE_URL } from "../../config";
 import Spinner from "../Spinner";
 
@@ -85,6 +86,9 @@ const Events = () => {
             <Spinner size="big" />
           </div>
         ) : null}
+      </div>
+      <div className="LandingPageFooter">
+        <LandingFooter />
       </div>
     </div>
   );
