@@ -32,6 +32,8 @@ const NewHeader = () => {
           <a
             href={`${LOGIN_URL}`}
             className="HeaderLinkDocs"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Login
           </a>

@@ -95,6 +95,9 @@ const LandingFooter = () => (
                 <li className="TextDivSpacing">
                   <Link to="/events">Events</Link>
                 </li>
+                <li className="TextDivSpacing">
+                  <Link to="/faqs">FAQs</Link>
+                </li>
               </ul>
             </div>
             <div className="FooterChildTwo">
@@ -112,9 +115,6 @@ const LandingFooter = () => (
                     Blog
                   </a>
                 </li>
-                {/* <li className="TextDivSpacing">
-                  <Link to="/faq">FAQs</Link>
-                </li> */}
               </ul>
             </div>
             <div className="FooterChildTwo">&nbsp;</div>

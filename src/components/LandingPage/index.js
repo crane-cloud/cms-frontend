@@ -30,6 +30,8 @@ const LandingPage = () => {
             </div>
             <a
               href={`${REGISTER_URL}`}
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <button className={styles.FreeTrialButton}>
                 <div>Start Free Trial</div>
