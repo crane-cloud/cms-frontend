@@ -115,6 +115,13 @@ const LandingFooter = () => (
                     Blog
                   </a>
                 </li>
+                <a
+                    href="https://github.com/cranecloud.io"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Contribute
+                </a>
               </ul>
             </div>
             <div className="FooterChildTwo">&nbsp;</div>
