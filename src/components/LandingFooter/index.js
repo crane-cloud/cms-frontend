@@ -7,6 +7,7 @@ import { ReactComponent as TwitterIcon } from "../../assets/images/twitter.svg";
 import { ReactComponent as FacebookIcon } from "../../assets/images/facebook.svg";
 import { ReactComponent as LinkedinIcon } from "../../assets/images/Linkedin.svg";
 import { ReactComponent as MediumIcon } from "../../assets/images/medium.svg";
+import { ReactComponent as GithubIcon } from "../../assets/images/githublogo.svg";
 
 const LandingFooter = () => (
   <footer className="LandingFooter">
@@ -51,6 +52,13 @@ const LandingFooter = () => (
                 rel="noopener noreferrer"
               >
                 <MediumIcon />
+              </a>
+              <a
+                href="https://github.com/CraneCloud.io"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GithubIcon />
               </a>
             </div>
           </div>
