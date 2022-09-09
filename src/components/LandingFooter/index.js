@@ -115,6 +115,8 @@ const LandingFooter = () => (
                   >
                     Blog
                   </a>
+                </li>
+                <li>
                   <a
                     href="https://github.com/crane-cloud"
                     rel="noopener noreferrer"
