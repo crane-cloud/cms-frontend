@@ -19,12 +19,16 @@
   font-family: monaco;
   src: url("./assets/fonts/monaco.ttf") format("truetype");
 }
+
 html {
   --primary-color: #008ac1;
   --secondary-color: #f7b21f;
-  --color-gray-light: #ccc;
-  --primary-color-dark: #06222f;
-  --primary-color-light: #99d2e9;
+  --secondary-light-color: #ffcc5f;
+  --gray-color: #555;
+  --gray-light-color: #ccc;
+  --primary-dark-color: #06222f;
+  --primary-light-color: #b6e3f9;
+  --gray-bg-light-color: #e5ebf3;
 }
 
 body {
@@ -32,12 +36,16 @@ body {
   padding: 0;
   color: #000;
   font-family: proxima-nova, sans-serif;
+  font-size: 1rem;
 }
 
-div#root {
-  min-height: 100vh;
+#root >div {
   display: flex;
   flex-flow: column;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var( --gray-bg-light-color);
 }
 
 textarea,
@@ -144,4 +152,44 @@ img {
 .componentBackdrop{
   background: #f1f1f1;
   min-height: 100vh;
+}
+
+.FullWidth{
+  width: 100%;
+}
+
+.Terms{
+  padding: 2rem;
+  line-height: 18px;
+}
+
+.SectionTitle{
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--primary-dark-color);
+  margin: 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--gray-light-color);
+}
+
+.SubTitle{
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-dark-color);
+  margin: 0;
+  padding: 0;
+}
+.SectionSubTitle{
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-dark-color);
+  margin: 0;
+  padding:0;
+}
+.SubText{
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--primary-dark-color);
+  margin: 0;
+  padding:0;
 }
