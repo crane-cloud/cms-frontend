@@ -8,6 +8,7 @@ import { ReactComponent as FacebookIcon } from "../../assets/images/facebook.svg
 import { ReactComponent as LinkedinIcon } from "../../assets/images/Linkedin.svg";
 import { ReactComponent as MediumIcon } from "../../assets/images/medium.svg";
 
+
 const LandingFooter = () => (
   <footer className="LandingFooter">
     <div className="FooterRow">
@@ -113,6 +114,15 @@ const LandingFooter = () => (
                     target="_blank"
                   >
                     Blog
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/crane-cloud"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Contribute
                   </a>
                 </li>
               </ul>
