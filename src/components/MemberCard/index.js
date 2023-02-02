@@ -3,12 +3,12 @@ import React from "react";
 import "./MemberCard.css";
 
 const MemberCard = (props) => {
-  const { name, title, icon } = props;
+  const { name, title, image } = props;
   return (
     <div className="MemberCard">
       <div
         className="MemberImageDiv"
-        style={{ backgroundImage: `url(${icon})` }}
+        style={{ backgroundImage: `url(${image})` }}
       />
       <div className="BottomContainer">
         <div className="MemberCardName">{name}</div>

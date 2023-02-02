@@ -26,6 +26,8 @@ const Header = (props) => {
           <a
             href={`${LOGIN_URL}`}
             className={`${styles.HeaderLinkLogin} ${styles.TurnLight}`}
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Login
           </a>

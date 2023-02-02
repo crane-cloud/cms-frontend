@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "../Header";
 import "./events.css";
+import LandingFooter from "../LandingFooter";
 import { API_BASE_URL } from "../../config";
 import Spinner from "../Spinner";
 
@@ -40,18 +41,18 @@ const Events = () => {
                 <div
                   class="photo"
                   style={{
-                    backgroundImage: `url(${event.acf.cover_image.url})`,
+                    backgroundImage: `url(${event.acf?.cover_image.url})`,
                   }}
                 ></div>
                 <ul class="details">
                   <li class="author">
                     <a href="/">Crane Cloud</a>
                   </li>
-                  <li class="date">{event.acf.start_date}</li>
+                  <li class="date">{event.acf?.start_date}</li>
                   <li class="tags">
                     <ul>
                       <li>
-                        <a href="/">{event.acf.location}</a>
+                        <a href="/">{event.acf?.location}</a>
                       </li>
                     </ul>
                   </li>
@@ -59,8 +60,8 @@ const Events = () => {
               </div>
               <div class="description">
                 <h1>{event.title.rendered}</h1>
-                <h2>{event.acf.event_type}</h2>
-                <p className="descriptionParagraph"> {event.acf.description}</p>
+                <h2>{event.acf?.event_type}</h2>
+                <p className="descriptionParagraph"> {event.acf?.description}</p>
                 <p class="read-more">
                   <Link
                     to={{
@@ -85,6 +86,9 @@ const Events = () => {
             <Spinner size="big" />
           </div>
         ) : null}
+      </div>
+      <div className="LandingPageFooter">
+        <LandingFooter />
       </div>
     </div>
   );

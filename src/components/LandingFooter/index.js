@@ -8,6 +8,7 @@ import { ReactComponent as FacebookIcon } from "../../assets/images/facebook.svg
 import { ReactComponent as LinkedinIcon } from "../../assets/images/Linkedin.svg";
 import { ReactComponent as MediumIcon } from "../../assets/images/medium.svg";
 
+
 const LandingFooter = () => (
   <footer className="LandingFooter">
     <div className="FooterRow">
@@ -32,7 +33,7 @@ const LandingFooter = () => (
                 <TwitterIcon />
               </a>
               <a
-                href="https://www.facebook.com/CraneCloud.io"
+                href="https://www.linkedin.com/company/cranecloud/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -64,32 +65,22 @@ const LandingFooter = () => (
                   <Link to="/team">Team</Link>
                 </li>
                 <li className="TextDivSpacing">
-                  <Link to="/terms-of-service" target="_blank">
-                    Terms of service
-                  </Link>
+                  <Link to="/terms-of-service">Terms of service</Link>
                 </li>
                 <li className="TextDivSpacing">
-                  <Link to="/privacy-policy" target="_blank">
-                    Privacy policy
-                  </Link>
+                  <Link to="/privacy-policy">Privacy policy</Link>
+                </li>
+                {/* <li className="TextDivSpacing">
+                  <Link to="/pricing">Pricing</Link>
+                </li> */}
+                <li className="TextDivSpacing">
+                  <Link to="/contact">Contact</Link>
                 </li>
               </ul>
             </div>
             <div className="FooterChildTwo">
               <div className="TextDivSpacing FooterLogoName">Resources</div>
               <ul className="FooterList">
-                <li className="TextDivSpacing">
-                  <Link to="/events">Events</Link>
-                </li>
-                <li className="TextDivSpacing">
-                  <a
-                    href="https://docs.cranecloud.io/quickstart/quickstart/"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    Quick Start Guide
-                  </a>
-                </li>
                 <li className="TextDivSpacing">
                   <a
                     href={`${DOCS_URL}`}
@@ -99,6 +90,15 @@ const LandingFooter = () => (
                     Docs
                   </a>
                 </li>
+                <li className="TextDivSpacing">
+                  <Link to="/articles">Articles</Link>
+                </li>
+                <li className="TextDivSpacing">
+                  <Link to="/events">Events</Link>
+                </li>
+                <li className="TextDivSpacing">
+                  <Link to="/faqs">FAQs</Link>
+                </li>
               </ul>
             </div>
             <div className="FooterChildTwo">
@@ -107,7 +107,6 @@ const LandingFooter = () => (
                 <li className="TextDivSpacing">
                   <Link to="/cloud-native-africa">Cloud Native Africa</Link>
                 </li>
-                <li className="TextDivSpacing">Contribute</li>
                 <li className="TextDivSpacing">
                   <a
                     href="https://medium.com/cranecloud"
@@ -115,6 +114,15 @@ const LandingFooter = () => (
                     target="_blank"
                   >
                     Blog
+                  </a>
+                </li>
+                <li className="TextDivSpacing">
+                  <a
+                    href="https://github.com/crane-cloud"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Contribute
                   </a>
                 </li>
               </ul>
