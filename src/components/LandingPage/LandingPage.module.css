@@ -20,6 +20,7 @@
 
   /* height: calc(100vh - 5rem); */
 }
+
 @media screen and (max-width: 768px) {
   .LandingPageMainContent {
     flex-direction: column;
@@ -48,6 +49,7 @@
   font-size: 4rem;
   font-weight: bold;
 }
+
 .LandingPageInfrastructurePic path {
   fill: var(--primary-light-color);
 }
@@ -107,6 +109,7 @@
   height: 100%;
   object-fit: cover;
 }
+
 .WhySectionChildContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -158,15 +161,19 @@
   overflow: hidden;
   margin: auto;
 }
+
 .BannerParagraph {
   color: #000000;
+  text-align: justify;
 }
+
 .BannerButton {
   background-color: #ffffff;
   color: #000000;
   border: none;
   padding: 0.5rem 2rem;
 }
+
 .LeftPageBannerInner {
   display: grid;
   grid-template-rows: auto;
@@ -226,26 +233,41 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
 .DatabaseSection,
 .ApplicationSection,
-.StackSection {
+.StackSection,
+.LearningSection {
   /* height: 100vh; */
   padding: 6rem 2rem 6rem 4rem;
   display: grid;
   grid-template-columns: 45% auto;
 }
+
 .DatabaseSection {
   background-color: var(--primary-light-color);
   gap: 2rem;
 }
+
 .ApplicationSection {
   background: var(--primary-color);
   gap: 2rem;
 }
+
 .StackSection {
   background: #cccccc;
   gap: 2rem;
 }
+
+.LearningSection {
+  padding-top: 1rem;
+  gap: 2rem;
+}
+
+.LearningSectionTitle {
+  padding: 2rem 4rem;
+}
+
 .IconSqure {
   border-radius: 10px;
   background-color: #fafafa;
@@ -273,19 +295,19 @@
   grid-template-rows: 20% auto 30%;
 }
 
-.DatabaseSection .LeftInfoSection div:nth-child(1) {
+.DatabaseSection .LeftInfoSection .DatabaseLeftInfoSection div:nth-child(1) {
   color: #555555;
 }
 
-.ApplicationSection .LeftInfoSection div:nth-child(1) {
+.ApplicationSection .LeftInfoSection .DatabaseLeftInfoSection div:nth-child(1) {
   color: #ffffff;
 }
 
-.StackSection .LeftInfoSection div:nth-child(1) {
+.StackSection .LeftInfoSection .DatabaseLeftInfoSection div:nth-child(1) {
   color: #000000;
 }
 
-.LeftInfoSection div:nth-child(2) {
+.LeftInfoSection .DatabaseLeftInfoSection div:nth-child(2) {
   line-height: 1.8;
 }
 
@@ -304,6 +326,7 @@
 .GridSide {
   display: grid;
   gap: 2rem;
+  transition: all;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
 }
@@ -333,6 +356,7 @@
   color: #555555;
   text-align: center;
 }
+
 .AlignButton {
   /* align-self: end; */
   display: grid;
@@ -353,6 +377,83 @@
 .AlignButton:hover {
   background-color: #dddddd;
 }
+
+.CardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-around;
+  padding-bottom: 3rem;
+}
+
+.CardSection {
+  width: 17rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+  padding: 20px;
+  display: grid;
+  grid-template-rows: 50% 3fr 1fr;
+  align-items: center;
+}
+
+.Brand {
+  width: 13rem;
+  height: 13rem;
+  justify-self: center;
+}
+
+.textJustify {
+  text-align: justify;
+}
+.textCenter {
+  text-align: center;
+}
+
+.ButtonSection {
+  padding-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.GetStartedButton {
+  background-color: var(--secondary-color);
+  text-transform: uppercase;
+  color: white !important;
+  padding: 0.7rem;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border: 1px solid var(--secondary-color);
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+}
+
+.GetStartedButton:hover {
+  color: var(--secondary-color);
+  border-color: #fff;
+}
+
+.DatabaseLeftInfoSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.LearningSection {
+  display: flex;
+}
+.BrandLogo {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 @media only screen and (max-width: 640px) {
   .LandingPageMainContentImg {
     display: none;
@@ -361,5 +462,27 @@
   .SolutionsSection {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+  }
+
+  .WhySectionChildContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .DatabaseSection,
+  .ApplicationSection,
+  .StackSection,
+  .LearningSection {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .CardSection {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .GridSide {
+    display: none;
   }
 }
