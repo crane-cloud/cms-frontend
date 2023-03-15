@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { REGISTER_URL } from "../../config";
 import NewHeader from "../../components/NewHeader";
 import LandingFooter from "../../components/LandingFooter";
 import { ReactComponent as InfrastrucurePic } from "../../assets/images/infrastructure.svg";
@@ -28,9 +28,16 @@ import { ReactComponent as Angular } from "../../assets/images/angularjs.svg";
 import { ReactComponent as Html } from "../../assets/images/html.svg";
 import { ReactComponent as CSS } from "../../assets/images/css.svg";
 import { ReactComponent as Drupal } from "../../assets/images/drupal.svg";
-
+import { ReactComponent as GitLab } from "../../assets/images/gitlab.svg";
+import { ReactComponent as GoPlayground } from "../../assets/images/go.svg";
+import {
+  GITLAB_URL,
+  GOPLAYGROUND_URL,
+  JUPYTERHUB_URL,
+  MIRA_DOCS_URL,
+  DOCS_URL,
+} from "../../config";
 import SecondaryButton from "../../components/SecondaryButton";
-import { DOCS_URL } from "../../config";
 import styles from "./LandingPage.module.css";
 
 const LandingPage = () => {
@@ -49,12 +56,14 @@ const LandingPage = () => {
               Crane Cloud is an open source multi-cloud software platform for
               cloud-native application deployment and management.
             </div>
-            <Link to="/register">
+            <a
+              href={`${REGISTER_URL}`}
+            >
               <button className={styles.FreeTrialButton}>
                 <div>Start Free Trial</div>
                 <RightArrow />
               </button>
-            </Link>
+            </a>
           </div>
           <div className={styles.LandingPageMainContentImg}>
             <InfrastrucurePic className={styles.LandingPageInfrastructurePic} />
@@ -97,8 +106,8 @@ const LandingPage = () => {
                 <div className={styles.WhySectionItem}>
                   <div className={styles.WhySectionCardTitle}>Support</div>
                   <div>
-                    Create a ticket, chat, or call a specialist regarding any
-                    queries.
+                    We offer round-the-clock support to our clients. Create a
+                    ticket, chat, or call a specialist regarding any queries.
                   </div>
                 </div>
               </div>
@@ -109,8 +118,15 @@ const LandingPage = () => {
               <div className={styles.LeftPageBannerInner}>
                 <h2>Migrate to the cloud</h2>
                 <p className={styles.BannerParagraph}>
-                  Governments and institutions are urged to begin digital
-                  transformation.
+                  Crane Cloud's managed cloud services are a reliable and
+                  efficient cloud computing solution that institutions,
+                  students, and ICT practitioners should contemplate migrating
+                  to. By opting for Crane Cloud's managed cloud services, you
+                  can rest assured of experiencing unparalleled scalability,
+                  security, and availability of your cloud deployment. Crane
+                  Cloud offers a comprehensive range of cloud services that can
+                  fulfill your needs, whether you want to deploy an application,
+                  store data, or manage your computing resources.
                 </p>
               </div>
             </div>
@@ -200,7 +216,7 @@ const LandingPage = () => {
           </div>
         </div>
         <section className={styles.DatabaseSection}>
-          <div className={styles.LeftInfoSection}>
+          <div className={styles.DatabaseLeftInfoSection}>
             <div className={styles.LeftInfoHeader}>
               Access your database anywhere
             </div>
@@ -230,7 +246,7 @@ const LandingPage = () => {
           </div>
         </section>
         <section className={styles.ApplicationSection}>
-          <div className={styles.LeftInfoSection}>
+          <div className={styles.DatabaseLeftInfoSection}>
             <div className={styles.LeftInfoHeader}>
               Applications in any stack
             </div>
@@ -274,7 +290,7 @@ const LandingPage = () => {
           </div>
         </section>
         <section className={styles.StackSection}>
-          <div className={styles.LeftInfoSection}>
+          <div className={styles.DatabaseLeftInfoSection}>
             <div className={styles.LeftInfoHeader}>Auto-containerization</div>
             <div>
               Unfamiliar with containerization or dockerization? Zip your
@@ -282,10 +298,13 @@ const LandingPage = () => {
               will dockerize, host the subsequent image and host your
               application.
             </div>
-            <SecondaryButton
-              label={"Read More"}
-              // className={styles.AutoContainer}
-            />
+            <a
+              href={`${MIRA_DOCS_URL}`}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <SecondaryButton label={"Read More"}>Read More</SecondaryButton>
+            </a>
           </div>
           <div className={styles.GridSide}>
             <div className={styles.IconSqure}>
@@ -308,6 +327,85 @@ const LandingPage = () => {
             </div>
             <div className={styles.IconSqure}>
               <Lara />
+            </div>
+          </div>
+        </section>
+
+        <div className={styles.LearningSectionTitle}>
+          <h2>Explore Crane Cloud Learning Tools</h2>
+        </div>
+        <section className={styles.CardContainer}>
+          <div className={styles.CardSection}>
+            <GitLab className={styles.Brand} />
+            <div>
+              <h3 className={styles.textCenter}>Self Managed GitLab</h3>
+              <div className={styles.textJustify}>
+                GitLab is a web-based Git repository manager that provides
+                source code management (SCM), continuous integration, and more.
+                It's used for version control and code collaboration.
+              </div>
+            </div>
+            <div className={styles.ButtonSection}>
+              <a
+                href={`${GITLAB_URL}`}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <button className={styles.GetStartedButton}>
+                  <div>Get Started</div>
+                  <RightArrow />
+                </button>
+              </a>
+            </div>
+          </div>
+          <div className={styles.CardSection}>
+            <GoPlayground className={styles.Brand} />
+            <div>
+              <h3 className={styles.textCenter}>Go Playground</h3>
+              <div className={styles.textJustify}>
+                Online tool for executing and testing Go code snippets in a
+                browser, without having to install Go or set up a local
+                development environment. It allows sharing code with others.
+              </div>
+            </div>
+            <div className={styles.ButtonSection}>
+              <a
+                href={`${GOPLAYGROUND_URL}`}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <button className={styles.GetStartedButton}>
+                  <div>Get Started</div>
+                  <RightArrow />
+                </button>
+              </a>
+            </div>
+          </div>
+          <div className={styles.CardSection}>
+            <img
+              className={styles.BrandLogo}
+              alt="jupyterhub_logo"
+              src={require("../../assets/images/jupyterhub.png").default}
+            />
+            <div>
+              <h3 className={styles.textCenter}>JupyterHub</h3>
+              <div className={styles.textJustify}>
+                JupyterHub brings the power of notebooks to groups of users. It
+                gives users access to computational environments and resources
+                without burdening the users
+              </div>
+            </div>
+            <div className={styles.ButtonSection}>
+              <a
+                href={`${JUPYTERHUB_URL}`}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <button className={styles.GetStartedButton}>
+                  <div>Get Started</div>
+                  <RightArrow />
+                </button>
+              </a>
             </div>
           </div>
         </section>
