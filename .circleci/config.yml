@@ -32,6 +32,11 @@ build_and_push_image: &build_and_push_image
       echo REACT_APP_LOGIN_URL=$REACT_APP_LOGIN_URL >> .env
       echo REACT_APP_BLOG_URL=$REACT_APP_BLOG_URL >> .env
       echo REACT_APP_DOCS_URL=$REACT_APP_DOCS_URL >> .env
+      echo REACT_APP_CRANE_CLOUD_STATUS=$REACT_APP_CRANE_CLOUD_STATUS >> .env
+      echo REACT_APP_GITLAB_URL=$REACT_APP_GITLAB_URL >> .env
+      echo REACT_APP_GOPLAYGROUND_URL=$REACT_APP_GOPLAYGROUND_URL >> .env
+      echo REACT_APP_JUPYTERHUB_URL=$REACT_APP_JUPYTERHUB_URL >> .env
+      echo REACT_APP_MIRA_DOCS_URL=$REACT_APP_MIRA_DOCS_URL >> .env
       export IMG_TAG=$(echo $CIRCLE_SHA1 | cut -c -7)
       docker login -u _json_key -p "$(echo $GCLOUD_SERVICE_KEY)" https://gcr.io
       docker build -f DockerFile -t gcr.io/$GCP_PROJECT_ID/cranecloud-cms:$IMG_TAG .
