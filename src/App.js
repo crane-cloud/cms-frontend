@@ -13,6 +13,9 @@ import Articles from './components/Articles';
 import Faq from './components/Faq';
 import Pricing from './components/Pricing'
 import Contact from './components/ContactPage';
+import LearningApp from './components/LApp';
+import GoPlay from './components/GoPlay';
+import Gitlab from './components/Gitlab';
 
 class App extends Component {
   render(){
@@ -30,6 +33,9 @@ class App extends Component {
         <Route exact path="/faqs" component={Faq}/>
         <Route exact path="/pricing" component={Pricing} />
         <Route exact path="/contact" component={Contact} />
+        <Route exact path="/jupyter" component={LearningApp} />
+        <Route exact path="/goplay" component={GoPlay} />
+        <Route exact path="/gitlab" component={Gitlab} />
         <Route path="*" component={PageNotFound} />
       </Switch>
     </Router>

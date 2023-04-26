@@ -1,0 +1,95 @@
+.LandingPage {
+  background: var(--primary-color);
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column;
+}
+
+.Container {
+  /* background: var(--primary-color);
+  align-items: center;
+  display: flex;
+  min-height: 4rem; */
+}
+
+.MainSection {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 4rem;
+  gap: 20%;
+}
+
+.InformationBar {
+  background: var(--blue-light-color);
+  align-items: center;
+  display: flex;
+  min-height: 4rem;
+  padding: 0 4rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.CardSection {
+  width: 40%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+  padding: 2rem;
+  display: grid;
+  align-items: center;
+  grid-template-rows: auto 20%;
+  min-height: 55vh;
+  justify-content: center;
+}
+
+.Text {
+  text-align: center;
+}
+
+.GetStartedButton {
+  background-color: var(--secondary-color);
+  text-transform: uppercase;
+  color: white !important;
+  padding: 0.7rem;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border: 1px solid var(--secondary-color);
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+  /* width: 60%; */
+  justify-content: center;
+}
+
+.GetStartedButton:hover {
+  color: var(--secondary-color);
+  border-color: #fff;
+}
+
+.Link {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.BrandLogo {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.textCenter {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.Brand {
+  width: 13rem;
+  height: 13rem;
+  justify-self: center;
+}
