@@ -1,7 +1,7 @@
 import React from "react";
 import NewHeader from "../NewHeader";
 import styles from "./GoPlay.module.css";
-import { REGISTER_URL } from "../../config";
+import { REGISTER_URL, GOPLAYGROUND_URL } from "../../config";
 import { ReactComponent as GoPlayground } from "../../assets/images/go.svg";
 
 function GoPlay() {
@@ -28,9 +28,15 @@ function GoPlay() {
                 or if you have an account click below.
               </p>
             </div>
-            <button className={styles.GetStartedButton}>
+
+            <a
+              href={`${GOPLAYGROUND_URL}`}
+              rel="noopener noreferrer"
+              target="_blank"
+              className={styles.GetStartedButton}
+            >
               <div>Get Started</div>
-            </button>
+            </a>
           </div>
         </div>
       </div>

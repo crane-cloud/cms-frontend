@@ -1,7 +1,7 @@
 import React from "react";
 import NewHeader from "../NewHeader";
 import styles from "./Gitlab.module.css";
-// import { REGISTER_URL } from "../../config";
+import { GITLAB_URL } from "../../config";
 import { ReactComponent as GitlabLogo } from "../../assets/images/gitlab.svg";
 
 function Gitlab() {
@@ -21,16 +21,18 @@ function Gitlab() {
               <p>Collaborate on projects by creating Groups.</p>
               <p>Discover and Explore open-source projects.</p>
               <p>Seamless setup of your CI/CD pipeline</p>
-              {/* <p>
-                <a className={styles.Link} href={`${REGISTER_URL}`}>
-                  Sign up{" "}
-                </a>{" "}
-                or if you have an account click below.
-              </p> */}
+              <p>
+                After registering your account will be activated in 24hrs
+              </p>
             </div>
-            <button className={styles.GetStartedButton}>
+            <a
+              href={`${GITLAB_URL}`}
+              rel="noopener noreferrer"
+              target="_blank"
+              className={styles.GetStartedButton}
+            >
               <div>Get Started</div>
-            </button>
+            </a>
           </div>
         </div>
       </div>
