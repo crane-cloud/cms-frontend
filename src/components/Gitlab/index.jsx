@@ -22,7 +22,7 @@ function Gitlab() {
               <p>Discover and Explore open-source projects.</p>
               <p>Seamless setup of your CI/CD pipeline</p>
               <p>
-                After registering your account will be activated in 24hrs
+                Instant registration and sign in.
               </p>
             </div>
             <a
