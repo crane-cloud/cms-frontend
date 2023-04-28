@@ -31,14 +31,13 @@ import { ReactComponent as Drupal } from "../../assets/images/drupal.svg";
 import { ReactComponent as GitLab } from "../../assets/images/gitlab.svg";
 import { ReactComponent as GoPlayground } from "../../assets/images/go.svg";
 import {
-  GITLAB_URL,
-  GOPLAYGROUND_URL,
-  JUPYTERHUB_URL,
   MIRA_DOCS_URL,
   DOCS_URL,
 } from "../../config";
 import SecondaryButton from "../../components/SecondaryButton";
 import styles from "./LandingPage.module.css";
+
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   return (
@@ -346,16 +345,21 @@ const LandingPage = () => {
               </div>
             </div>
             <div className={styles.ButtonSection}>
-              <a
+              {/* <a
                 href={`${GITLAB_URL}`}
                 rel="noopener noreferrer"
                 target="_blank"
-              >
+              > */}
+              <Link
+                    to={{
+                      pathname: "/gitlab",
+                    }}
+                  >
                 <button className={styles.GetStartedButton}>
                   <div>Get Started</div>
                   <RightArrow />
                 </button>
-              </a>
+              </Link>
             </div>
           </div>
           <div className={styles.CardSection}>
@@ -369,16 +373,16 @@ const LandingPage = () => {
               </div>
             </div>
             <div className={styles.ButtonSection}>
-              <a
-                href={`${GOPLAYGROUND_URL}`}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
+              <Link
+                    to={{
+                      pathname: "/goplay",
+                    }}
+                  >
                 <button className={styles.GetStartedButton}>
                   <div>Get Started</div>
                   <RightArrow />
                 </button>
-              </a>
+              </Link>
             </div>
           </div>
           <div className={styles.CardSection}>
@@ -396,16 +400,16 @@ const LandingPage = () => {
               </div>
             </div>
             <div className={styles.ButtonSection}>
-              <a
-                href={`${JUPYTERHUB_URL}`}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
+              <Link
+                  to={{
+                    pathname: "/jupyter",
+                  }}
+                  >
                 <button className={styles.GetStartedButton}>
                   <div>Get Started</div>
                   <RightArrow />
                 </button>
-              </a>
+              </Link>
             </div>
           </div>
         </section>

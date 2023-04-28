@@ -6,7 +6,9 @@ export const REGISTER_URL = process.env.REACT_APP_REGISTER_URL;
 export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 //crane cloud status
 export const CRANE_CLOUD_STATUS = process.env.REACT_APP_CRANE_CLOUD_STATUS;
-export const GITLAB_URL = process.env.REACT_APP_GITLAB_URL;
-export const GOPLAYGROUND_URL = process.env.REACT_APP_GOPLAYGROUND_URL;
-export const JUPYTERHUB_URL = process.env.REACT_APP_JUPYTERHUB_URL;
 export const MIRA_DOCS_URL = process.env.REACT_APP_MIRA_DOCS_URL;
+export const GITLAB_URL =
+  "https://gitlab-ce-32b64b3f-fc91-4331-bf7e.cranecloud.io/users/sign_in";
+export const GOPLAYGROUND_URL = "https://go.dev.cranecloud.io/";
+export const JUPYTERHUB_URL =
+  "https://jupiter-a13faf8e-83e0-4930-8898.cranecloud.io";
