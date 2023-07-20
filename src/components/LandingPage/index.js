@@ -117,15 +117,15 @@ const LandingPage = () => {
               <div className={styles.LeftPageBannerInner}>
                 <h2>Migrate to the cloud</h2>
                 <p className={styles.BannerParagraph}>
-                  Crane Cloud's managed cloud services are a reliable and
-                  efficient cloud computing solution that institutions,
-                  students, and ICT practitioners should contemplate migrating
-                  to. By opting for Crane Cloud's managed cloud services, you
-                  can rest assured of experiencing unparalleled scalability,
-                  security, and availability of your cloud deployment. Crane
-                  Cloud offers a comprehensive range of cloud services that can
-                  fulfill your needs, whether you want to deploy an application,
-                  store data, or manage your computing resources.
+                Institutions, students, and ICT practitioners looking for a
+                  reliable and efficient cloud computing solution should
+                  consider migrating to managed cloud services provided by Crane
+                  Cloud. With Crane Cloud's managed cloud services, you can be
+                  assured of unparalleled scalability, security, and
+                  availability of your cloud deployment. Whether you are looking
+                  to deploy an application, store data, or manage your computing
+                  resources, Crane Cloud provides a comprehensive suite of cloud
+                  services that can cater to your needs.
                 </p>
               </div>
             </div>
