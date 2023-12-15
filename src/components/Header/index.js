@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import Logo from "../Logo";
 
 import styles from "./Header.module.css";
@@ -12,9 +12,6 @@ const Header = (props) => {
 
       <div className={styles.HeaderLinksWrap}>
         <div className={styles.HeaderLinks}>
-          <Link to="/team" className={styles.HeaderLinkDocs}>
-            Team
-          </Link>
           <a
             href={`${DOCS_URL}`}
             className={styles.HeaderLinkDocs}
@@ -37,4 +34,4 @@ const Header = (props) => {
   );
 };
 
-export default (withRouter(Header));
+export default withRouter(Header);
