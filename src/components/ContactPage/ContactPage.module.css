@@ -36,7 +36,7 @@
   max-width: 1240px;
   border: 1px solid var(--primary-color);
   border-radius: 15px;
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-gap: 20px;
@@ -74,6 +74,12 @@
   display: grid;
   grid-template-rows: auto;
   padding: 1rem;
+  gap: 2rem;
+}
+
+.InnerGridContac {
+  width: 60%;
+  padding: 11% 0;
 }
 .ContactGridContainer {
   padding: 2rem;
@@ -89,6 +95,7 @@
   font-size: 20px;
   padding: 0rem 1rem 0rem 1rem;
   text-align: center;
+  font-weight: 600;
 }
 
 .TelephoneSmall,
@@ -110,7 +117,7 @@
 
 .LocationGrid {
   display: grid;
-  grid-template-columns: 7fr 0.1fr 7fr 0.1fr;
+  grid-template-columns: 2fr 3fr;
   grid-template-rows: auto;
   grid-gap: 0.1rem;
   overflow-x: auto;
@@ -129,6 +136,10 @@
 
 .InnerAddressGrid {
   background-color: #fbfbfb;
+  display: flex;
+  align-items: center;
+  gap: 7%;
+  padding: 0 2rem;
 }
 
 .InnerLocationGird:hover {
@@ -146,6 +157,8 @@
   font-weight: bold;
   padding: 1rem;
   text-align: center;
+  display: grid;
+  gap: 2rem;
   justify-items: center;
 }
 

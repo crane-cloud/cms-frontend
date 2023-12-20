@@ -1,6 +1,11 @@
-.sidebar-nav{
+.sidebar-nav {
   padding: 0 3rem;
-}.div-item {
+}
+
+.sidebar-nav-menu {
+  padding: 2rem 0;
+}
+.div-item {
   display: block;
 }
 .div-item-body {

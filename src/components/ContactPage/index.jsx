@@ -29,10 +29,11 @@ const ContactPage = () => {
           <div className={styles.ContactGrid}>
             <div className={styles.InnerContactGird}>
               <div className={styles.InnerGridTitle}>
+                <div className={styles.InnerGridTitleText}>Email Us</div>
                 <Mail className={styles.MailSmall} />
               </div>
-              <div className={styles.InnerGridTitleText}>Email Us</div>
-              <div className={styles.InnerGridContact}>
+
+              <div className={styles.InnerGridContac}>
                 <div className={styles.ContactName}>Support</div>
                 <div className={styles.Contact}>info[@]cranecloud.io</div>
               </div>
@@ -40,9 +41,10 @@ const ContactPage = () => {
 
             <div className={styles.InnerContactGird}>
               <div className={styles.InnerGridTitle}>
+                <div className={styles.InnerGridTitleText}>Follow Us</div>
                 <Thumb className={styles.ThumbSmall} />
               </div>
-              <div className={styles.InnerGridTitleText}>Follow Us</div>
+
               <div className={styles.InnerGridContact}>
                 <div className={styles.ContactName}>Platforms</div>
                 <div>
@@ -82,13 +84,14 @@ const ContactPage = () => {
 
         <div className={styles.LocationGridContainer}>
           <div className={styles.LocationGrid}>
-            <div className={styles.InnerAddressGird}>
+            <div className={styles.InnerAddressGrid}>
               <div className={styles.LocationIcon}>
                 <div className={styles.InnerGridTitle}>
+                  <div className={styles.InnerLocationTitleText}>Visit Us</div>
                   <Location className={styles.LocationSmall} />
                 </div>
               </div>
-              <div className={styles.InnerLocationTitleText}>Visit Us</div>
+
               <div className={styles.InnerGridContact}>
                 <div className={styles.ContactName}>Address details</div>
                 <div className={styles.Contact}>
@@ -101,7 +104,7 @@ const ContactPage = () => {
                 <div className={styles.Contact}>Kampala, Uganda</div>
               </div>
             </div>
-            <div className={styles.verticalLine}> </div>
+            {/* <div className={styles.verticalLine}> </div> */}
 
             <div className={styles.InnerLocationGird}>
               <div className={styles.InnerGridTitle}>
@@ -111,7 +114,7 @@ const ContactPage = () => {
               <div className={styles.MapGrid}>
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63836.05553771624!2d32.5617119312709!3d0.32667363868257215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb0932c4cb69%3A0x8789ba0df5ad06e!2sCOCIS%20BLOCK%20B!5e0!3m2!1sen!2sug!4v1642592449504!5m2!1sen!2sug"
-                  width={500}
+                  width={650}
                   height={300}
                   allowfullscreen=""
                   loading="lazy"
