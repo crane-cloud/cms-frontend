@@ -81,7 +81,7 @@ jobs:
           REACT_APP_DOCKER_EMAIL: ${{ secrets.REACT_APP_DOCKER_EMAIL }}
           REACT_APP_DOCKER_PASSWORD: ${{ secrets.REACT_APP_DOCKER_PASSWORD }}
           REACT_APP_MONITORING_APP: ${{ secrets.REACT_APP_MONITORING_APP_STAGING }}
-        run: | 
+        run: |
           chmod +x ./.github/workflows/bin/create_envs.sh
           ./.github/workflows/bin/create_envs.sh
 
@@ -111,6 +111,10 @@ jobs:
               core.setOutput('tag', tag)
             }
 
-      - name: Update deployment image
+      - name: Create deployment
         run: |
-          kubectl set image deployment/cranecloud-cms-frontend cranecloud-cms-frontend=gcr.io/${{ secrets.GCP_PROJECT_ID }}/cranecloud-cms-frontend:${{ steps.export.outputs.tag }} --record -n $namespace
+          kubectl create deployment cranecloud-cms-frontend --image=gcr.io/${{ secrets.GCP_PROJECT_ID }}/cranecloud-cms-frontend:${{ steps.export.outputs.tag }} -n $namespace --replicas=2
+
+      # - name: Update deployment image
+      #   run: |
+      #     kubectl set image deployment/cranecloud-cms-frontend cranecloud-cms-frontend=gcr.io/${{ secrets.GCP_PROJECT_ID }}/cranecloud-cms-frontend:${{ steps.export.outputs.tag }} -n $namespace
