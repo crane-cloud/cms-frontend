@@ -129,17 +129,5 @@ jobs:
       - name: Update deployment
         run: |
           kubectl set image deployment/cranecloud-cms-frontend cranecloud-cms-frontend=gcr.io/${{ secrets.GCP_PROJECT_ID }}/cranecloud-cms-frontend:${{ steps.export.outputs.tag }} -n $namespace
-          
-          kubectl set env deployment/cranecloud-cms-frontend \
-            REACT_APP_API_BASE_URL=${{ secrets.STAGING_REACT_APP_API_BASE_URL }} \
-            REACT_APP_MIRA_API_URL=${{ secrets.STAGING_REACT_APP_MIRA_API_URL }} \
-            REACT_APP_REGISTER_URL=${{ secrets.STAGING_REACT_APP_REGISTER_URL }} \
-            REACT_APP_DOCS_URL=${{ secrets.STAGING_REACT_APP_DOCS_URL }} \
-            REACT_APP_BLOG_URL=${{ secrets.STAGING_REACT_APP_BLOG_URL }} \
-            REACT_APP_LOGIN_URL=${{ secrets.STAGING_REACT_APP_LOGIN_URL }} \
-            REACT_APP_CRANE_CLOUD_STATUS=${{ secrets.STAGING_REACT_APP_CRANE_CLOUD_STATUS }} \
-            REACT_APP_MIRA_DOCS_URL=${{ secrets.STAGING_REACT_APP_MIRA_DOCS_URL }} \
-            REACT_APP_MIRA_BLOG_URL=https://staging-blog.mira.cranecloud.io \
-            -n $namespace
         
 
