@@ -80,6 +80,7 @@ jobs:
           REACT_APP_LOGIN_URL: ${{ secrets.STAGING_REACT_APP_LOGIN_URL }}
           REACT_APP_CRANE_CLOUD_STATUS: ${{ secrets.STAGING_REACT_APP_CRANE_CLOUD_STATUS }}
           REACT_APP_MIRA_DOCS_URL: ${{ secrets.STAGING_REACT_APP_MIRA_DOCS_URL }}
+          REACT_APP_MIRA_BLOG_URL: 'https://staging-blog.mira.cranecloud.io'
           
         run: |
           chmod +x ./.github/workflows/bin/create_envs.sh
@@ -120,4 +121,4 @@ jobs:
 
       - name: Update deployment image
         run: |
-          kubectl set image deployment/cranecloud-cms-frontend cranecloud-cms-frontend=gcr.io/${{ secrets.GCP_PROJECT_ID }}/cranecloud-cms-frontend:${{ steps.export.outputs.tag }} -n $namespace --replicas=2
+          kubectl set image deployment/cranecloud-cms-frontend cranecloud-cms-frontend=gcr.io/${{ secrets.GCP_PROJECT_ID }}/cranecloud-cms-frontend:${{ steps.export.outputs.tag }} -n $namespace
