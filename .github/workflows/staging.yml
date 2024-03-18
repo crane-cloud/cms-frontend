@@ -111,12 +111,12 @@ jobs:
               core.setOutput('tag', tag)
             }
 
-      - name: Create deployment
-        run: |
-          kubectl create deployment cranecloud-cms-frontend --image=gcr.io/${{ secrets.GCP_PROJECT_ID }}/cranecloud-cms-frontend:${{ steps.export.outputs.tag }} -n $namespace --replicas=2
-      - name: Expose deployment
-        run: |
-          kubectl create service nodeport cranecloud-cms-frontend-service --tcp=3000:3000 -n $namespace
+      # - name: Create deployment
+      #   run: |
+      #     kubectl create deployment cranecloud-cms-frontend --image=gcr.io/${{ secrets.GCP_PROJECT_ID }}/cranecloud-cms-frontend:${{ steps.export.outputs.tag }} -n $namespace --replicas=2
+      # - name: Expose deployment
+      #   run: |
+      #     kubectl create service nodeport cranecloud-cms-frontend-service --tcp=3000:3000 -n $namespace
 
       - name: Update deployment image
         run: |
