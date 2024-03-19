@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-      - ft-add-actions
 
 jobs:
   build_and_deploy_to_production:
@@ -110,15 +109,8 @@ jobs:
               core.setOutput('tag', tag)
             }
 
-      - name: Create deployment
+      - name: Update deployment
         run: |
-          kubectl create deployment cranecloud-cms-frontend --image=gcr.io/${{ secrets.GCP_PROJECT_ID }}/cranecloud-cms-frontend:${{ steps.export.outputs.tag }} -n $namespace --replicas=2
-      - name: Expose deployment
-        run: |
-          kubectl create service nodeport cranecloud-cms-frontend --tcp=3000:3000 -n $namespace
-      
-    #   - name: Update deployment
-    #     run: |
-    #       kubectl set image deployment/cranecloud-cms-frontend cranecloud-cms-frontend=gcr.io/${{ secrets.GCP_PROJECT_ID }}/cranecloud-cms-frontend:${{ steps.export.outputs.tag }} -n $namespace
+          kubectl set image deployment/cranecloud-cms-frontend cranecloud-cms-frontend=gcr.io/${{ secrets.GCP_PROJECT_ID }}/cranecloud-cms-frontend:${{ steps.export.outputs.tag }} -n $namespace
         
 
