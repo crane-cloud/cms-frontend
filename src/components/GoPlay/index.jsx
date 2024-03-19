@@ -1,7 +1,7 @@
 import React from "react";
 import NewHeader from "../NewHeader";
 import styles from "./GoPlay.module.css";
-import { REGISTER_URL, GOPLAYGROUND_URL } from "../../config";
+import { FRONTEND_URL, GOPLAYGROUND_URL } from "../../config";
 import { ReactComponent as GoPlayground } from "../../assets/images/go.svg";
 
 function GoPlay() {
@@ -22,7 +22,7 @@ function GoPlay() {
               <p>Simplified environment for learning Go.</p>
               <p>Experimentation on loose with Sandbox environment</p>
               <p>
-                <a className={styles.Link} href={`${REGISTER_URL}`}>
+                <a className={styles.Link} href={`${FRONTEND_URL}/register`}>
                   Sign up{" "}
                 </a>{" "}
                 or if you have an account click below.
