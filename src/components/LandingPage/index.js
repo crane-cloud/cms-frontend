@@ -1,5 +1,5 @@
 import React from "react";
-import { REGISTER_URL } from "../../config";
+import { FRONTEND_URL } from "../../config";
 import NewHeader from "../../components/NewHeader";
 import LandingFooter from "../../components/LandingFooter";
 import { ReactComponent as InfrastrucurePic } from "../../assets/images/infrastructure.svg";
@@ -56,7 +56,7 @@ const LandingPage = () => {
               cloud-native application deployment and management.
             </div>
             <a
-              href={`${REGISTER_URL}`}
+              href={`${FRONTEND_URL}/register`}
             >
               <button className={styles.FreeTrialButton}>
                 <div>Start Free Trial</div>
