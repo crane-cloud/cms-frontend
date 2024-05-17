@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import Logo from "../Logo";
 
 import styles from "./Header.module.css";
-import { DOCS_URL, LOGIN_URL } from "../../config";
+import { DOCS_URL, FRONTEND_URL } from "../../config";
 
 const Header = (props) => {
   return (
@@ -21,7 +21,7 @@ const Header = (props) => {
             Docs
           </a>
           <a
-            href={`${LOGIN_URL}`}
+            href={`${FRONTEND_URL}/login`}
             className={`${styles.HeaderLinkLogin} ${styles.TurnLight}`}
             rel="noopener noreferrer"
             target="_blank"

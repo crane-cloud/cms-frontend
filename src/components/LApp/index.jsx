@@ -1,7 +1,7 @@
 import React from "react";
 import NewHeader from "../NewHeader";
 import styles from "./LApp.module.css";
-import { REGISTER_URL, JUPYTERHUB_URL } from "../../config";
+import { FRONTEND_URL, JUPYTERHUB_URL } from "../../config";
 
 function LearningApp() {
   return (
@@ -25,7 +25,7 @@ function LearningApp() {
               <p>Unparalleled support for ML and data science</p>
               <p>Real-time collaboration for projects and assignments.</p>
               <p>
-                <a className={styles.Link} href={`${REGISTER_URL}`}>
+                <a className={styles.Link} href={`${FRONTEND_URL}/register`}>
                   Sign up{" "}
                 </a>{" "}
                 or if you have an account click below.

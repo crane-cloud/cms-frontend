@@ -3,7 +3,7 @@ import React from // { useState, useEffect, useRef }
 import {  withRouter } from "react-router-dom";
 import NewLogo from "../NewLogo";
 import "./NewHeader.css";
-import { DOCS_URL, BLOG_URL, LOGIN_URL } from "../../config";
+import { DOCS_URL, BLOG_URL, FRONTEND_URL } from "../../config";
 
 const NewHeader = () => {
 
@@ -30,7 +30,7 @@ const NewHeader = () => {
           </a>
           {/* <Link className="HeaderLinkDocs" to="/pricing">Pricing</Link> */}
           <a
-            href={`${LOGIN_URL}`}
+            href={`${FRONTEND_URL}/login`}
             className="HeaderLinkDocs"
             rel="noopener noreferrer"
             target="_blank"
