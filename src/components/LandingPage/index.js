@@ -30,10 +30,7 @@ import { ReactComponent as CSS } from "../../assets/images/css.svg";
 import { ReactComponent as Drupal } from "../../assets/images/drupal.svg";
 import { ReactComponent as GitLab } from "../../assets/images/gitlab.svg";
 import { ReactComponent as GoPlayground } from "../../assets/images/go.svg";
-import {
-  MIRA_DOCS_URL,
-  DOCS_URL,
-} from "../../config";
+import { MIRA_DOCS_URL, DOCS_URL } from "../../config";
 import SecondaryButton from "../../components/SecondaryButton";
 import styles from "./LandingPage.module.css";
 
@@ -77,7 +74,7 @@ const LandingPage = () => {
               <div className={styles.DataCenterImage}>
                 <img
                   alt="data-center"
-                  src={require("../../assets/images/server_image.jpg").default}
+                  src={require("../../assets/images/server_image.jpg")}
                 />
               </div>
 
@@ -117,7 +114,7 @@ const LandingPage = () => {
               <div className={styles.LeftPageBannerInner}>
                 <h2>Migrate to the cloud</h2>
                 <p className={styles.BannerParagraph}>
-                Institutions, students, and ICT practitioners looking for a
+                  Institutions, students, and ICT practitioners looking for a
                   reliable and efficient cloud computing solution should
                   consider migrating to managed cloud services provided by Crane
                   Cloud. With Crane Cloud's managed cloud services, you can be
@@ -351,10 +348,10 @@ const LandingPage = () => {
                 target="_blank"
               > */}
               <Link
-                    to={{
-                      pathname: "/gitlab",
-                    }}
-                  >
+                to={{
+                  pathname: "/gitlab",
+                }}
+              >
                 <button className={styles.GetStartedButton}>
                   <div>Get Started</div>
                   <RightArrow />
@@ -374,10 +371,10 @@ const LandingPage = () => {
             </div>
             <div className={styles.ButtonSection}>
               <Link
-                    to={{
-                      pathname: "/goplay",
-                    }}
-                  >
+                to={{
+                  pathname: "/goplay",
+                }}
+              >
                 <button className={styles.GetStartedButton}>
                   <div>Get Started</div>
                   <RightArrow />
@@ -389,7 +386,7 @@ const LandingPage = () => {
             <img
               className={styles.BrandLogo}
               alt="jupyterhub_logo"
-              src={require("../../assets/images/jupyterhub.png").default}
+              src={require("../../assets/images/jupyterhub.png")}
             />
             <div>
               <h3 className={styles.textCenter}>JupyterHub</h3>
@@ -401,10 +398,10 @@ const LandingPage = () => {
             </div>
             <div className={styles.ButtonSection}>
               <Link
-                  to={{
-                    pathname: "/jupyter",
-                  }}
-                  >
+                to={{
+                  pathname: "/jupyter",
+                }}
+              >
                 <button className={styles.GetStartedButton}>
                   <div>Get Started</div>
                   <RightArrow />

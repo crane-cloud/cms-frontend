@@ -8,7 +8,6 @@ import { ReactComponent as FacebookIcon } from "../../assets/images/facebook.svg
 import { ReactComponent as LinkedinIcon } from "../../assets/images/Linkedin.svg";
 import { ReactComponent as MediumIcon } from "../../assets/images/medium.svg";
 
-
 const LandingFooter = () => (
   <footer className="LandingFooter">
     <div className="FooterRow">
@@ -20,9 +19,8 @@ const LandingFooter = () => (
             </div>
             <div>
               <p className="LandingFooterCopyright LogoBrandName">
-                Copyright {new Date().getFullYear()} Crane Cloud, Ltd
+                Copyright {new Date().getFullYear()} Crane Cloud
               </p>
-              <p className="TextDivSpacing">Made in Uganda</p>
             </div>
             <div className="SocialsIcons">
               <a
